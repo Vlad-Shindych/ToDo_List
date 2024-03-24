@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>123</title>
+    <title>Create_category</title>
 </head>
 <body>
-<h3>Првоерка</h3>
-{% for user in users %}
-<h1>{{ user.username }}</h1>
-{% endfor %}
+<form method="POST">
+{% csrf_token %}
+{{form.as_p}}
+<button>Сохранить</button>
 <a href="/" style="color: black;">На главную</a>
+</form>
 </body>
 </html>

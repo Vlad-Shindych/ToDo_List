@@ -58,3 +58,4 @@ class Priority(models.Model):
     class Meta:
         verbose_name = "Приоритет"
         verbose_name_plural = "Приоритеты"
+        

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Мои задачи</h1>
+  {% for task in tasks %}
+    <div>
+      <h3>{{ task.title }}</h3>
+      <p>{{ task.description }}</p>
+      {% if task.completed %}
+        <p style="text-decoration: line-through;">Задача выполнена</p>
+      {% else %}
+        <form action="{% url 'task_complete' task.id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit">Задача выполнена</button>
+        </form>
+      {% endif %}
+    </div>
+  {% endfor %}
+{% endblock %}
